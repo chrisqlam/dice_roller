@@ -12,47 +12,53 @@ class DiceRoller extends StatefulWidget {
 
 class DiceRollerState extends State<DiceRoller> {
   int result;
+  String finalResult = "";
 
   void rolld20() {
     setState(() {
       var random = new Random();
       result = 1 + random.nextInt(20);
-      result.toString();
+      finalResult = result.toString();
     });
   }
-    void rolld12() {
+
+  void rolld12() {
     setState(() {
       var random = new Random();
       result = 1 + random.nextInt(12);
-      result.toString();
+      finalResult = result.toString();
     });
   }
-    void rolld10() {
+
+  void rolld10() {
     setState(() {
       var random = new Random();
       result = 1 + random.nextInt(10);
-      result.toString();
+      finalResult = result.toString();
     });
   }
-    void rolld8() {
+
+  void rolld8() {
     setState(() {
       var random = new Random();
       result = 1 + random.nextInt(8);
-      result.toString();
+      finalResult = result.toString();
     });
   }
-    void rolld6() {
+
+  void rolld6() {
     setState(() {
       var random = new Random();
       result = 1 + random.nextInt(6);
-      result.toString();
+      finalResult = result.toString();
     });
   }
-    void rolld4() {
+
+  void rolld4() {
     setState(() {
       var random = new Random();
       result = 1 + random.nextInt(4);
-      result.toString();
+      finalResult = result.toString();
     });
   }
 
@@ -61,9 +67,6 @@ class DiceRollerState extends State<DiceRoller> {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.grey,
-        appBar: AppBar(
-          title: Text("Life Counter"),
-        ),
         floatingActionButton: SpeedDial(
           animatedIcon: AnimatedIcons.menu_close,
           animatedIconTheme: IconThemeData(size: 22.0),
@@ -76,11 +79,11 @@ class DiceRollerState extends State<DiceRoller> {
           shape: CircleBorder(),
           children: [
             SpeedDialChild(
-                child: Icon(const IconData(0xe800, fontFamily: 'DiceFont')),
-                backgroundColor: Colors.red,
-                label: 'D4',
-                onTap: rolld4,
-                ),
+              child: Icon(const IconData(0xe800, fontFamily: 'DiceFont')),
+              backgroundColor: Colors.red,
+              label: 'D4',
+              onTap: rolld4,
+            ),
             SpeedDialChild(
               child: Icon(const IconData(0xe805, fontFamily: 'DiceFont')),
               backgroundColor: Colors.red,
@@ -116,14 +119,20 @@ class DiceRollerState extends State<DiceRoller> {
         body: Column(
           children: <Widget>[
             LifeCounter(),
-            Center(
-              child: Text("Dice Result:", style: TextStyle(fontSize: 16.0, color: Colors.white),),
-            ),
             Expanded(
               child: Center(
-                child: Text(
-                  "$result",
-                  style: TextStyle(fontSize: 90.0, color: Colors.white),
+                child: Column(
+                  children: <Widget>[
+                    (finalResult != "")
+                        ? Text("You rolled:",
+                            style:
+                                TextStyle(fontSize: 28.0, color: Colors.white))
+                        : Container(),
+                    Text(
+                      "$finalResult",
+                      style: TextStyle(fontSize: 90.0, color: Colors.white),
+                    ),
+                  ],
                 ),
               ),
             ),
