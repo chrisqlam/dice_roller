@@ -66,11 +66,11 @@ class DiceRollerState extends State<DiceRoller> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.grey,
         floatingActionButton: SpeedDial(
           animatedIcon: AnimatedIcons.menu_close,
           animatedIconTheme: IconThemeData(size: 22.0),
           curve: Curves.bounceIn,
+          overlayColor: Colors.blue,
           overlayOpacity: 0.5,
           heroTag: 'speed-dial-hero-tag',
           backgroundColor: Colors.white,
@@ -116,27 +116,45 @@ class DiceRollerState extends State<DiceRoller> {
             ),
           ],
         ),
-        body: Column(
-          children: <Widget>[
-            LifeCounter(),
-            Expanded(
-              child: Center(
-                child: Column(
-                  children: <Widget>[
-                    (finalResult != "")
-                        ? Text("You rolled:",
-                            style:
-                                TextStyle(fontSize: 28.0, color: Colors.white))
-                        : Container(),
-                    Text(
-                      "$finalResult",
-                      style: TextStyle(fontSize: 90.0, color: Colors.white),
-                    ),
-                  ],
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              stops: [
+                0.02,
+                0.8,
+                1
+              ],
+              colors: [
+                Colors.red,
+                Colors.red[300],
+                Colors.red[200]
+              ]
+            )
+          ),
+          child: Column(
+            children: <Widget>[
+              LifeCounter(),
+              Expanded(
+                child: Center(
+                  child: Column(
+                    children: <Widget>[
+                      (finalResult != "")
+                          ? Text("You rolled:",
+                              style:
+                                  TextStyle(fontSize: 28.0, color: Colors.white))
+                          : Container(),
+                      Text(
+                        "$finalResult",
+                        style: TextStyle(fontSize: 90.0, color: Colors.white),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

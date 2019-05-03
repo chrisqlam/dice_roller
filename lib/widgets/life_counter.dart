@@ -35,7 +35,7 @@ class LifeCounterState extends State<LifeCounter> {
       children: <Widget>[
         Container(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height / 2,
+          height: MediaQuery.of(context).size.height / 1.5,
           child: Center(
             child: Text(
               total.toString(),
@@ -47,7 +47,7 @@ class LifeCounterState extends State<LifeCounter> {
           children: <Widget>[
             Expanded(
               child: SizedBox(
-                height: MediaQuery.of(context).size.height / 2,
+                height: MediaQuery.of(context).size.height / 1.5,
                 child: InkWell(
                   onTap: addLifeTotal,
                   onLongPress: resetLifeTotal,
@@ -56,7 +56,7 @@ class LifeCounterState extends State<LifeCounter> {
             ),
              Expanded(
               child: SizedBox(
-                height: MediaQuery.of(context).size.height / 2,
+                height: MediaQuery.of(context).size.height / 1.5,
                 child: InkWell(
                   onTap: subLifeTotal,
                   onLongPress: resetLifeTotal,
