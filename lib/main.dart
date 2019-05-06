@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:dice_roller/widgets/dice_roller.dart';
+import 'package:flutter/services.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown
+  ]);
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   Widget build(context) {

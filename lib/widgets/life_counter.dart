@@ -24,8 +24,11 @@ class LifeCounterState extends State<LifeCounter> {
 
   void subLifeTotal() {
     setState(() {
-      total--;
-      
+      if (total == 0) {
+        total = 0;
+      } else {
+        total--;
+      }
     });
   }
 
@@ -46,23 +49,21 @@ class LifeCounterState extends State<LifeCounter> {
         Row(
           children: <Widget>[
             Expanded(
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height / 1.5,
-                child: InkWell(
-                  onTap: addLifeTotal,
-                  onLongPress: resetLifeTotal,
-                ),
-              )
-            ),
-             Expanded(
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height / 1.5,
-                child: InkWell(
-                  onTap: subLifeTotal,
-                  onLongPress: resetLifeTotal,
-                ),
-              )
-            ),
+                child: SizedBox(
+              height: MediaQuery.of(context).size.height / 1.5,
+              child: InkWell(
+                onTap: addLifeTotal,
+                onLongPress: resetLifeTotal,
+              ),
+            )),
+            Expanded(
+                child: SizedBox(
+              height: MediaQuery.of(context).size.height / 1.5,
+              child: InkWell(
+                onTap: subLifeTotal,
+                onLongPress: resetLifeTotal,
+              ),
+            )),
           ],
         )
       ],
