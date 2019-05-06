@@ -1,16 +1,14 @@
 # dice_roller
 
-A new Flutter project.
+A work in progress.
 
-## Getting Started
+## Log
 
-This project is a starting point for a Flutter application.
+May 1st, 2019
+Project Started.
 
-A few resources to get you started if this is your first Flutter project:
+May 2nd, 2019
+Core functionality completed. I intend to spruce it up and add more features now that the core features work.
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## Known Bugs
+Pressing the floating action button repeatedly will cause the children of the speed dial to remain on screen until the action button is pressed again.
