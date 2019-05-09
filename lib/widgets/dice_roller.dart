@@ -121,15 +121,12 @@ class DiceRollerState extends State<DiceRoller> {
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              stops: [
-                0.02,
-                0.8,
-                1
-              ],
+              // stops: [
+              // ],
               colors: [
-                Colors.red,
-                Colors.red[300],
-                Colors.red[200]
+                Color(0xfff6921e),
+                Color(0xffee4036)
+
               ]
             )
           ),
