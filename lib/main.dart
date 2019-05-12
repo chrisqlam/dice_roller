@@ -12,8 +12,17 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-
   Widget build(context) {
-    return CommanderDamage();
+    return MaterialApp(
+      home: Scaffold(
+        body: PageView(
+          scrollDirection: Axis.horizontal,
+          children: <Widget>[
+            DiceRoller(),
+            CommanderDamage(),
+          ],
+        ),
+      ),
+    );
   }
 }
