@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: PageView(
+          
           scrollDirection: Axis.horizontal,
           children: <Widget>[
             DiceRoller(),

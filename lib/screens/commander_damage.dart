@@ -31,7 +31,8 @@ class CommanderDamageState extends State<CommanderDamage> {
                   colors: [Color(0xfff6921e), Color(0xffee4036)],
                 ),
               ),
-              child: GridView.builder(                 
+              child: GridView.builder(   
+                physics: NeverScrollableScrollPhysics(),              
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
                 itemCount: damage.length,
