@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:dice_roller/model/player.dart';
 
 class CommanderDamage extends StatefulWidget {
-  int damage = 0;
-  CommanderDamage({this.damage, Key key});
+  var damage = [0, 0, 0, 0, 0, 0];
 
   @override
-  State<StatefulWidget> createState() {
-    return CommanderDamageState();
-  }
+  // State<StatefulWidget> createState() {
+  //   return CommanderDamageState();
+  // }
+
+  CommanderDamageState createState() => CommanderDamageState();
 }
 
 class CommanderDamageState extends State<CommanderDamage> {
-  var damage = [0, 0, 0, 0, 0, 0];
+
   @override
   Widget build(context) {
     return MaterialApp(
@@ -35,18 +35,18 @@ class CommanderDamageState extends State<CommanderDamage> {
                 physics: NeverScrollableScrollPhysics(),              
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
-                itemCount: damage.length,
+                itemCount: widget.damage.length,
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, index) {
                   return InkWell(
                     onTap: () {
                       setState(() {
-                        damage[index]++;
+                        widget.damage[index]++;
                       });
                     },
                     onLongPress: () {
                       setState(() {
-                        damage[index] = 0;
+                        widget.damage[index] = 0;
                       });
                     },
                     child: Container(
@@ -64,7 +64,7 @@ class CommanderDamageState extends State<CommanderDamage> {
                             ),
                           ),
                           Text(
-                            damage[index].toString(),
+                            widget.damage[index].toString(),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 35.0,
