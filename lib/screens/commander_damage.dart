@@ -4,10 +4,6 @@ class CommanderDamage extends StatefulWidget {
   var damage = [0, 0, 0, 0, 0, 0];
 
   @override
-  // State<StatefulWidget> createState() {
-  //   return CommanderDamageState();
-  // }
-
   CommanderDamageState createState() => CommanderDamageState();
 }
 
