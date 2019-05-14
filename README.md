@@ -2,13 +2,10 @@
 
 A work in progress.
 
-## Log
+## Description
 
-May 1st, 2019
-Project Started.
-
-May 2nd, 2019
-Core functionality completed. I intend to spruce it up and add more features now that the core features work.
+A Magic the Gathering life counter for Commander gameplay.Currently consists of two screens: Life Total and Commander Damage tracker.
+The Life Total screen includes a dice roller menu.
 
 ## Known Bugs
 Pressing the floating action button repeatedly will cause the children of the speed dial to remain on screen until the action button is pressed again.
